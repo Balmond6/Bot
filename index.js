@@ -1,35 +1,23 @@
 // index.js
-const { createClient } = require("bedrock-protocol");
-const express = require("express");
+const { createClient } = require('bedrock-protocol');
+const keep_alive = require('./keep_alive');
 
-// server kecil untuk HTTP ping (agar Render & UptimeRobot bisa akses)
-const app = express();
-const port = process.env.PORT || 3000;
-
-app.get("/", (req, res) => {
-  res.send("🚀 Bot Bedrock sedang berjalan di Render!");
-});
-
-app.listen(port, () => {
-  console.log(`🌐 HTTP server aktif di port ${port}`);
-});
-
-// bot Minecraft Bedrock
+// Konfigurasi bot
 const client = createClient({
-  host: "devoth.aternos.me",
-  port: 50674,
-  username: "BotDevoth", // ganti nama kalau bentrok dengan player asli
-  offline: true
+  host: 'devoth.aternos.me',  // ganti dengan alamat server
+  port: 50674,                // port server
+  username: 'BotDevoth',      // ganti nama kalau bentrok
+  offline: true               // Aternos default offline mode
 });
 
-client.on("join", () => {
-  console.log("✅ Bot berhasil join ke server!");
+client.on('join', () => {
+  console.log('✅ Bot berhasil join ke server!');
 });
 
-client.on("disconnect", (packet) => {
-  console.log("❌ Bot terputus:", packet);
+client.on('disconnect', (packet) => {
+  console.log('❌ Bot terputus:', packet);
 });
 
-client.on("error", (err) => {
-  console.log("⚠️ Error:", err.message);
+client.on('error', (err) => {
+  console.log('⚠️ Error:', err.message);
 });
