@@ -1,13 +1,13 @@
 {
   "name": "bedrock-bot",
   "version": "1.0.0",
-  "description": "Minecraft Bedrock bot on Render",
+  "description": "Minecraft Bedrock bot with keep-alive for Replit",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "bedrock-protocol": "^3.54.0",
-    "express": "^4.18.2"
+    "bedrock-protocol": "^3.43.0",
+    "express": "^4.19.2"
   }
 }
