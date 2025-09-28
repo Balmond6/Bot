@@ -1,0 +1,13 @@
+{
+  "name": "bedrock-bot",
+  "version": "1.0.0",
+  "description": "Minecraft Bedrock bot using bedrock-protocol on Render",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "bedrock-protocol": "^3.54.0",
+    "express": "^4.18.2"
+  }
+}
